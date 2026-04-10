@@ -1,0 +1,11 @@
+# Robots.txt for Sunhang International Logistics
+# https://www.sunhang-logistics.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.sunhang-logistics.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawlers)
+Crawl-delay: 1

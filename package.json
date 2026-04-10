@@ -1,0 +1,8 @@
+{
+  "name": "sunhang-logistics",
+  "version": "1.0.0",
+  "description": "顺航物流网站",
+  "scripts": {
+    "build": "echo 'No build needed'"
+  }
+}

@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunhang International Logistics — China to Southeast Asia Freight Expert</title>
+  <meta name="description" content="Sunhang International Logistics - Professional freight forwarding from China to Thailand, Malaysia, Singapore, Cambodia, Philippines, Indonesia, Vietnam, Myanmar. Air freight, sea freight, express, DDP, cross-border e-commerce. Door-to-door customs clearance." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#3b82f6; --primary-dark:#2563eb; --success:#22c55e; --bg-light:#f1f5f9;
+      --text-dark:#1f2937; --text-muted:#6b7280; --white:#ffffff;
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text-dark);background:#fff;line-height:1.6}
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+
+    /* Header */
+    header.site-header{background:#fff;position:sticky;top:0;z-index:50}
+    .header-main{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #e5e7eb}
+    .brand-left{display:flex;align-items:center;gap:16px}
+    .logo-box{display:flex;align-items:center;gap:8px}
+    .logo-img{height:44px;width:auto;border-radius:6px}
+    .brand-info{display:flex;flex-direction:column}
+    .brand-name{font-weight:600;font-size:15px;color:var(--text-dark)}
+    .brand-tagline{font-size:13px;color:var(--text-muted)}
+    
+    nav.main-nav{display:flex;gap:32px}
+    nav.main-nav a{color:var(--text-muted);text-decoration:none;font-weight:500;font-size:15px;padding:4px 0}
+    nav.main-nav a:hover{color:var(--primary)}
+    nav.main-nav a.active{color:var(--primary);border-bottom:2px solid var(--primary)}
+    
+    .header-right{display:flex;align-items:center;gap:24px}
+    .whatsapp-btn{display:inline-flex;gap:8px;align-items:center;padding:12px 20px;background:var(--success);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+    .whatsapp-btn svg{width:20px;height:20px}
+    .lang-switch{display:flex;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden}
+    .lang-switch button{padding:8px 16px;border:none;background:#fff;cursor:pointer;font-size:14px;font-weight:500;color:var(--text-muted)}
+    .lang-switch button.active{background:var(--primary);color:#fff}
+    
+    /* Animations */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes fadeInScale{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+    .animate-on-scroll{opacity:0;transition:all 0.6s ease-out}
+    .animate-on-scroll.animated{animation:fadeInUp 0.6s ease-out forwards}
+    .service-card.animate-on-scroll{transition:transform 0.3s,box-shadow 0.3s,opacity 0.6s ease-out}
+    .route-card.animate-on-scroll{transition:all 0.4s ease-out}
+    .contact-card.animate-on-scroll{transition:all 0.3s ease-out}
+
+    /* Breadcrumb */
+    .breadcrumb{padding:12px 0;font-size:13px;color:var(--text-muted)}
+    .breadcrumb a{color:var(--primary);text-decoration:none}
+
+    /* Hero */
+    .hero{padding:60px 0 40px;text-align:center;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%)}
+    .hero h1{font-size:40px;font-weight:700;color:var(--text-dark);margin:0 0 16px}
+    .hero-subtitle{font-size:16px;color:var(--text-muted);margin:0 0 32px}
+    .hero-badges{display:flex;gap:12px;justify-content:center;margin-bottom:32px}
+    .hero-badge{display:flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;font-size:14px;color:var(--text-dark)}
+    .hero-badge svg{width:18px;height:18px;color:var(--primary)}
+    .hero-cta{display:flex;gap:16px;justify-content:center;margin-bottom:48px}
+    .btn-primary{background:var(--primary);color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;border:none;cursor:pointer}
+    .btn-primary:hover{background:var(--primary-dark)}
+    .btn-secondary{background:#fff;color:var(--primary);padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;border:2px solid var(--primary)}
+    .hero-image{width:100%;max-width:800px;height:400px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+    .hero-image img{width:100%;height:100%;object-fit:cover}
+
+    /* Services */
+    section.services{padding:80px 0;background:#fff}
+    section.services h2{text-align:center;font-size:32px;font-weight:700;margin:0 0 8px}
+    section.services .subtitle{text-align:center;color:var(--text-muted);font-size:16px;margin:0 0 48px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .service-card{background:#fff;padding:40px 32px;border-radius:12px;border:1px solid #e5e7eb;text-align:center;transition:all 0.3s}
+    .service-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.08);border-color:var(--primary)}
+    .service-icon{width:64px;height:64px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .service-icon svg{width:32px;height:32px;color:var(--primary)}
+    .service-card h3{margin:0 0 12px;font-size:18px;font-weight:600}
+    .service-card p{margin:0;color:var(--text-muted);font-size:14px;line-height:1.6}
+
+    /* Routes */
+    .routes{padding:80px 0;background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%)}
+    .routes h2{text-align:center;font-size:32px;font-weight:700;margin:0 0 8px;color:#fff}
+    .routes-subtitle{text-align:center;color:rgba(255,255,255,0.8);font-size:16px;margin:0 0 48px}
+    .routes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .route-card{background:rgba(255,255,255,0.1);padding:28px;border-radius:12px;text-align:center;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2)}
+    .route-flag{width:80px;height:54px;border-radius:4px;margin:0 auto 16px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+    .route-flag img{width:100%;height:100%;object-fit:cover}
+    .route-card h4{margin:0 0 8px;font-size:18px;font-weight:600;color:#fff}
+    .route-card .ports{margin:0 0 16px;color:rgba(255,255,255,0.8);font-size:13px;line-height:1.5}
+    .route-list{list-style:none;padding:0;margin:0;text-align:left}
+    .route-list li{color:#86efac;font-size:13px;padding:4px 0;display:flex;align-items:center;gap:8px}
+    .route-list li::before{content:"✓";color:#4ade80;font-weight:700}
+
+    /* Quote Form */
+    .quote-section{padding:80px 0;background:var(--bg-light)}
+    .quote-section h2{text-align:center;font-size:32px;font-weight:700;margin:0 0 8px}
+    .quote-section .subtitle{text-align:center;color:var(--text-muted);font-size:16px;margin:0 0 48px}
+    .quote-form{max-width:600px;margin:0 auto;background:#fff;padding:40px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+    .form-group{margin-bottom:24px}
+    .form-group label{display:block;margin-bottom:8px;font-weight:500;font-size:14px;color:var(--text-dark)}
+    .form-group input,.form-group select{width:100%;padding:12px 16px;border:1px solid #d1d5db;border-radius:8px;font-size:15px;transition:border-color 0.2s}
+    .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary)}
+    .form-group input::placeholder{color:#9ca3af}
+    .submit-btn{width:100%;padding:16px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer}
+    .submit-btn:hover{background:var(--primary-dark)}
+
+    /* Contact */
+    .contact-section{padding:80px 0;background:#fff}
+    .contact-section h2{text-align:center;font-size:32px;font-weight:700;margin:0 0 8px}
+    .contact-section .subtitle{text-align:center;color:var(--text-muted);font-size:16px;margin:0 0 48px}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .contact-card{background:#fff;padding:32px 24px;border-radius:12px;text-align:center;border:1px solid #e5e7eb}
+    .contact-icon{width:64px;height:64px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .contact-icon svg{width:28px;height:28px}
+    .contact-card h4{margin:0 0 8px;font-size:16px;font-weight:600}
+    .contact-card p{margin:0 0 4px;color:var(--text-dark);font-size:14px}
+    .contact-card .note{color:var(--text-muted);font-size:12px}
+    .contact-btn{display:inline-block;margin-top:16px;padding:10px 24px;border:2px solid var(--primary);color:var(--primary);border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+    .contact-btn:hover{background:var(--primary);color:#fff}
+
+    /* Footer */
+    footer.site-footer{background:#1f2937;color:#9ca3af;padding:60px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:48px}
+    .footer-brand{display:flex;gap:16px;align-items:flex-start}
+    .footer-logo-box{padding:8px;border-radius:8px}
+    .footer-logo-box img{height:36px;width:auto;border-radius:4px}
+    .footer-brand-info h3{color:#fff;font-size:18px;font-weight:700;margin:0 0 4px}
+    .footer-brand-info p{color:#9ca3af;font-size:13px;margin:0 0 16px;line-height:1.6}
+    .footer-brand-info .desc{color:#9ca3af;font-size:14px;line-height:1.6;max-width:280px}
+    .footer-grid h4{margin:0 0 20px;color:#fff;font-size:16px;font-weight:600}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:12px}
+    .footer-links a{color:#9ca3af;text-decoration:none;font-size:14px}
+    .footer-links a:hover{color:#fff}
+    .footer-contact{list-style:none}
+    .footer-contact li{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:14px;color:#9ca3af}
+    .footer-contact svg{width:18px;height:18px;color:var(--primary);flex-shrink:0;margin-top:2px}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;margin-top:32px;border-top:1px solid #374151;font-size:13px}
+    .footer-bottom-links{display:flex;gap:24px}
+    .footer-bottom-links a{color:#9ca3af;text-decoration:none}
+    .footer-bottom-links a:hover{color:#fff}
+
+    /* Back to top */
+    .back-to-top{position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:var(--primary);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:100}
+    .back-to-top svg{width:24px;height:24px}
+    .floating-wa{position:fixed;bottom:80px;right:24px;width:56px;height:56px;background:#25D366;color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);z-index:100;text-decoration:none}
+    .floating-wa svg{width:28px;height:28px}
+    .floating-wa:hover{transform:scale(1.1)}
+
+    /* Responsive */
+    @media (max-width:1024px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .routes-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:768px){
+      .hero h1{font-size:28px}
+      .services-grid{grid-template-columns:1fr}
+      .routes-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      nav.main-nav{display:none}
+      .header-right .whatsapp-btn span{display:none}
+      .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18067820696"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18067820696');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-main">
+        <div class="brand-left">
+          <div class="logo-box">
+            <img src="/images/shunhang-logo.jpg" alt="SH顺航" style="height:44px;width:auto;">
+          </div>
+          <div class="brand-info">
+            <div class="brand-name" data-key="brand_name">顺航国际物流货运代理有限公司</div>
+            <div class="brand-tagline" data-key="brand_tagline">中国 → 泰国 / 马来西亚 / 新加坡 / 柬埔寨 / 菲律宾 专线</div>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <a class="active" href="#home" data-key="nav_home">首页</a>
+          <a href="#services" data-key="nav_services">服务项目</a>
+          <a href="#routes" data-key="nav_routes">物流线路</a>
+          <a href="#quote" data-key="nav_quote">在线询价</a>
+          <a href="#contact" data-key="nav_contact">联系我们</a>
+        </nav>
+
+        <div class="header-right">
+          <div class="lang-switch">
+            <button data-lang="zh">中文</button>
+            <button class="active" data-lang="en">English</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <div class="wrap">
+        <a href="#" data-key="breadcrumb_home">首页</a> / <span data-key="breadcrumb_brand">顺航国际物流</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="wrap">
+      <h1 data-key="hero_title">中国 → 泰国 / 马来西亚 / 新加坡 / 柬埔寨 / 菲律宾 物流</h1>
+      <p class="hero-subtitle" data-key="hero_subtitle">空运 · 海运 · 快递 · DDP · 跨境电商 — 门到门清关服务</p>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span data-key="badge_1">2小时快速响应</span>
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-key="badge_2">安全可靠</span>
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          <span data-key="badge_3">门到门服务</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#quote" data-key="btn_quote">立即询价</a>
+        <a class="btn-secondary" href="#contact" data-key="btn_contact">联系我们</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=400&fit=crop" alt="仓库物流">
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <h2 data-key="services_title">我们的服务</h2>
+      <p class="subtitle" data-key="services_subtitle">一站式国际物流解决方案</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 12l5-5m-5 5l5 5"/></svg>
+          </div>
+          <h3 data-key="service_air">空运</h3>
+          <p data-key="service_air_desc">高效安全的空运运输，适合紧急和高价值货物</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3 data-key="service_sea">海运</h3>
+          <p data-key="service_sea_desc">经济实惠的集装箱运输，FCL和LCL服务</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <h3 data-key="service_express">国际快递</h3>
+          <p data-key="service_express_desc">DHL、FedEx、UPS国际快递服务</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 data-key="service_ddp">DDP服务</h3>
+          <p data-key="service_ddp_desc">门到门含税服务，简化跨境物流和清关</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          </div>
+          <h3 data-key="service_ecom">跨境电商物流</h3>
+          <p data-key="service_ecom_desc">跨境电商仓储、打包、一件代发服务</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 data-key="service_customs">清关服务</h3>
+          <p data-key="service_customs_desc">专业进出口报关及查验协助服务</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="routes" class="routes">
+    <div class="wrap">
+      <h2 data-key="routes_title">物流线路</h2>
+      <p class="routes-subtitle" data-key="routes_subtitle">专业中国至东南亚物流专线</p>
+      <div class="routes-grid">
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/th.png" alt="泰国">
+          </div>
+          <h4 data-key="route_th">泰国 Thailand</h4>
+          <p class="ports" data-key="route_th_ports">主要港口：林查班港、曼谷港</p>
+          <ul class="route-list">
+            <li data-key="route_th_sea">海运：8-15天</li>
+            <li data-key="route_th_air">空运：2-4天</li>
+            <li data-key="route_th_land">陆运：5-10天</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/my.png" alt="马来西亚">
+          </div>
+          <h4 data-key="route_my">马来西亚 Malaysia</h4>
+          <p class="ports" data-key="route_my_ports">主要港口：巴生港、槟城港</p>
+          <ul class="route-list">
+            <li data-key="route_my_sea">海运：7-15天</li>
+            <li data-key="route_my_air">空运：2-4天</li>
+            <li data-key="route_my_ddp">支持DDP服务</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/sg.png" alt="新加坡">
+          </div>
+          <h4 data-key="route_sg">新加坡 Singapore</h4>
+          <p class="ports" data-key="route_sg_ports">主要港口：新加坡港</p>
+          <ul class="route-list">
+            <li data-key="route_sg_sea">海运：10-18天</li>
+            <li data-key="route_sg_air">空运：1-3天</li>
+            <li data-key="route_sg_ftz">自贸港优势</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/kh.png" alt="柬埔寨">
+          </div>
+          <h4 data-key="route_kh">柬埔寨 Cambodia</h4>
+          <p class="ports" data-key="route_kh_ports">主要运输方式：陆运/空运</p>
+          <ul class="route-list">
+            <li data-key="route_kh_land">陆运：3-8天</li>
+            <li data-key="route_kh_air">空运：1-3天</li>
+            <li data-key="route_kh_textile">纺织专线</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/ph.png" alt="菲律宾">
+          </div>
+          <h4 data-key="route_ph">菲律宾 Philippines</h4>
+          <p class="ports" data-key="route_ph_ports">主要港口：马尼拉港、宿务港</p>
+          <ul class="route-list">
+            <li data-key="route_ph_sea">海运：10-15天</li>
+            <li data-key="route_ph_air">空运：1-3天</li>
+            <li data-key="route_ph_delivery">岛屿配送</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/id.png" alt="印尼">
+          </div>
+          <h4 data-key="route_id">印尼 Indonesia</h4>
+          <p class="ports" data-key="route_id_ports">主要港口：雅加达、泗水</p>
+          <ul class="route-list">
+            <li data-key="route_id_sea">海运：10-18天</li>
+            <li data-key="route_id_air">空运：2-4天</li>
+            <li data-key="route_id_pulau">岛屿配送</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/vn.png" alt="越南">
+          </div>
+          <h4 data-key="route_vn">越南 Vietnam</h4>
+          <p class="ports" data-key="route_vn_ports">主要港口：胡志明市、海防</p>
+          <ul class="route-list">
+            <li data-key="route_vn_sea">海运：7-14天</li>
+            <li data-key="route_vn_air">空运：1-3天</li>
+            <li data-key="route_vn_textile">纺织专线</li>
+          </ul>
+        </div>
+        <div class="route-card">
+          <div class="route-flag">
+            <img src="https://flagcdn.com/w160/mm.png" alt="缅甸">
+          </div>
+          <h4 data-key="route_mm">缅甸 Myanmar</h4>
+          <p class="ports" data-key="route_mm_ports">主要运输方式：陆运/空运</p>
+          <ul class="route-list">
+            <li data-key="route_mm_land">陆运：4-8天</li>
+            <li data-key="route_mm_air">空运：1-3天</li>
+            <li data-key="route_mm_border">边境贸易</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="quote-section">
+    <div class="wrap">
+      <h2 data-key="quote_title">在线询价</h2>
+      <p class="subtitle" data-key="quote_subtitle">填写表单，我们将在2小时内通过WhatsApp或邮箱回复</p>
+      <form class="quote-form" id="quoteForm">
+        <div class="form-group">
+          <label data-key="form_name">姓名</label>
+          <input type="text" name="name" placeholder="您的姓名" required>
+        </div>
+        <div class="form-group">
+          <label data-key="form_company">公司名称</label>
+          <input type="text" name="company" placeholder="您的公司名称">
+        </div>
+        <div class="form-group">
+          <label data-key="form_email">邮箱</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label data-key="form_phone">WhatsApp/电话</label>
+          <input type="tel" name="whatsapp" placeholder="+86 xxx xxxx xxxx">
+        </div>
+        <div class="form-group">
+          <label data-key="form_service">服务类型</label>
+          <select name="service" required>
+            <option value="" data-key="form_service_select">请选择服务类型</option>
+            <option value="air" data-key="form_service_air">空运</option>
+            <option value="sea" data-key="form_service_sea">海运</option>
+            <option value="express" data-key="form_service_express">国际快递</option>
+            <option value="ddp" data-key="form_service_ddp">DDP服务</option>
+            <option value="ecommerce" data-key="form_service_ecom">跨境电商物流</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-key="form_destination">目的国</label>
+          <select name="destination" required>
+            <option value="" data-key="form_dest_select">请选择目的国</option>
+            <option value="thailand" data-key="form_dest_th">泰国</option>
+            <option value="malaysia" data-key="form_dest_my">马来西亚</option>
+            <option value="singapore" data-key="form_dest_sg">新加坡</option>
+            <option value="cambodia" data-key="form_dest_kh">柬埔寨</option>
+            <option value="philippines" data-key="form_dest_ph">菲律宾</option>
+            <option value="indonesia" data-key="form_dest_id">印尼</option>
+            <option value="vietnam" data-key="form_dest_vn">越南</option>
+            <option value="myanmar" data-key="form_dest_mm">缅甸</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn" data-key="form_submit">提交询价</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <h2 data-key="contact_title">联系我们</h2>
+      <p class="subtitle" data-key="contact_subtitle">多种方式获取即时帮助和专业支持</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h4 data-key="contact_wa_title">WhatsApp 询价</h4>
+          <p>+86 18928711267</p>
+          <p class="note" data-key="contact_wa_note">24小时在线，快速响应</p>
+          <a id="waCard" class="contact-btn" href="#" data-key="contact_wa_btn">发送消息</a>
+        </div>
+        <div class="contact-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h4 data-key="contact_email_title">邮箱</h4>
+          <p>yingxiauxue054@gmail.com</p>
+          <p class="note" data-key="contact_email_note">工作日2小时内回复</p>
+          <a class="contact-btn" href="mailto:yingxiauxue054@gmail.com" data-key="contact_email_btn">发送邮件</a>
+        </div>
+        <div class="contact-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h4 data-key="contact_phone_title">电话咨询</h4>
+          <p>+86 18928711267</p>
+          <p class="note" data-key="contact_phone_note">中国客服</p>
+          <a class="contact-btn" href="tel:+8618928711267" data-key="contact_phone_btn">立即拨打</a>
+        </div>
+        <div class="contact-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <h4 data-key="contact_time_title">工作时间</h4>
+          <p data-key="contact_time_1">周一至周五：9:00-18:00</p>
+          <p data-key="contact_time_2">周六：9:00-13:00</p>
+          <p class="note" data-key="contact_time_note">周日及节假日休息</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-box">
+            <img src="/images/shunhang-logo.jpg" alt="SH顺航" style="height:50px;width:auto;">
+          </div>
+          <div class="footer-brand-info">
+            <h3 data-key="footer_brand">顺航国际物流</h3>
+            <p data-key="footer_tagline">专业东南亚物流专家</p>
+            <p class="desc" data-key="footer_desc">专注中国至泰国、马来西亚、新加坡、柬埔寨、菲律宾国际物流，提供空运、海运、快递、DDP一站式解决方案。</p>
+          </div>
+        </div>
+        <div>
+          <h4 data-key="footer_quick">快捷链接</h4>
+          <ul class="footer-links">
+            <li><a href="#home" data-key="footer_home">首页</a></li>
+            <li><a href="#services" data-key="footer_services">服务项目</a></li>
+            <li><a href="#routes" data-key="footer_routes">物流线路</a></li>
+            <li><a href="#quote" data-key="footer_quote">在线询价</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-key="footer_service_title">服务项目</h4>
+          <ul class="footer-links">
+            <li><a href="#services" data-key="footer_air">空运</a></li>
+            <li><a href="#services" data-key="footer_sea">海运</a></li>
+            <li><a href="#services" data-key="footer_express">国际快递</a></li>
+            <li><a href="#services" data-key="footer_ddp">DDP服务</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-key="footer_contact_title">联系方式</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span data-key="footer_addr">中国广东省广州市白云区</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+86 18928711267</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>yingxiauxue054@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-key="footer_copyright">© 2026 顺航国际物流货运代理有限公司 版权所有</span>
+        <div class="footer-bottom-links">
+          <a href="#" data-key="footer_privacy">隐私政策</a>
+          <a href="#" data-key="footer_terms">服务条款</a>
+          <a href="#" data-key="footer_faq">常见问题</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <a id="floatingWa" class="floating-wa" href="#" target="_blank" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    var i18n = {
+      zh: {
+        brand_name: "顺航国际物流货运代理有限公司",
+        brand_tagline: "中国 → 泰国 / 马来西亚 / 新加坡 / 柬埔寨 / 菲律宾 / 印尼 / 越南 / 缅甸 专线",
+        nav_home: "首页",
+        nav_services: "服务项目",
+        nav_routes: "物流线路",
+        nav_quote: "在线询价",
+        nav_contact: "联系我们",
+        wa_btn: "WhatsApp询价",
+        breadcrumb_home: "首页",
+        breadcrumb_brand: "顺航国际物流",
+        hero_title: "中国 → 泰国/马来西亚/新加坡/柬埔寨/菲律宾/印尼/越南/缅甸 物流",
+        hero_subtitle: "空运 · 海运 · 快递 · DDP · 跨境电商 — 门到门清关服务",
+        badge_1: "2小时快速响应",
+        badge_2: "安全可靠",
+        badge_3: "门到门服务",
+        btn_quote: "立即询价",
+        btn_contact: "联系我们",
+        services_title: "我们的服务",
+        services_subtitle: "一站式国际物流解决方案",
+        service_air: "空运",
+        service_air_desc: "高效安全的空运运输，适合紧急和高价值货物",
+        service_sea: "海运",
+        service_sea_desc: "经济实惠的集装箱运输，FCL和LCL服务",
+        service_express: "国际快递",
+        service_express_desc: "DHL、FedEx、UPS国际快递服务",
+        service_ddp: "DDP服务",
+        service_ddp_desc: "含税门到门一站式服务",
+        service_ecom: "跨境电商",
+        service_ecom_desc: "跨境仓储及一件代发服务",
+        service_customs: "清关服务",
+        service_customs_desc: "专业报关报检服务",
+        routes_title: "物流线路时效",
+        routes_subtitle: "专业中国到东南亚物流",
+        route_th: "泰国",
+        route_th_ports: "主要港口：林查班、曼谷",
+        route_th_sea: "海运：8-15天",
+        route_th_air: "空运：2-4天",
+        route_th_land: "陆运：5-10天",
+        route_my: "马来西亚",
+        route_my_ports: "主要港口：巴生港、槟城",
+        route_my_sea: "海运：7-15天",
+        route_my_air: "空运：2-4天",
+        route_my_ddp: "可做DDP",
+        route_sg: "新加坡",
+        route_sg_ports: "主要港口：新加坡港",
+        route_sg_sea: "海运：10-18天",
+        route_sg_air: "空运：1-3天",
+        route_sg_ftz: "自贸港",
+        route_kh: "柬埔寨",
+        route_kh_ports: "主要运输方式：陆运/空运",
+        route_kh_land: "陆运：3-8天",
+        route_kh_air: "空运：1-3天",
+        route_kh_textile: "纺织专线",
+        route_ph: "菲律宾",
+        route_ph_ports: "主要港口：马尼拉港、宿务港",
+        route_ph_sea: "海运：10-15天",
+        route_ph_air: "空运：1-3天",
+        route_ph_delivery: "岛屿配送",
+        route_id: "印尼",
+        route_id_ports: "主要港口：雅加达、泗水",
+        route_id_sea: "海运：10-18天",
+        route_id_air: "空运：2-4天",
+        route_id_pulau: "岛屿配送",
+        route_vn: "越南",
+        route_vn_ports: "主要港口：胡志明市、海防",
+        route_vn_sea: "海运：7-14天",
+        route_vn_air: "空运：1-3天",
+        route_vn_textile: "纺织专线",
+        route_mm: "缅甸",
+        route_mm_ports: "主要运输方式：陆运/空运",
+        route_mm_land: "陆运：4-8天",
+        route_mm_air: "空运：1-3天",
+        route_mm_border: "边境贸易",
+        quote_title: "免费询价",
+        quote_subtitle: "我们将在2小时内通过WhatsApp或邮件回复",
+        form_name: "姓名",
+        form_company: "公司名称",
+        form_email: "邮箱",
+        form_phone: "WhatsApp/电话",
+        form_service: "服务类型",
+        form_service_select: "选择服务类型",
+        form_service_air: "空运",
+        form_service_sea: "海运",
+        form_service_express: "国际快递",
+        form_service_ddp: "DDP服务",
+        form_service_ecom: "跨境电商物流",
+        form_destination: "目的国",
+        form_dest_select: "选择目的国",
+        form_dest_th: "泰国",
+        form_dest_my: "马来西亚",
+        form_dest_sg: "新加坡",
+        form_dest_kh: "柬埔寨",
+        form_dest_ph: "菲律宾",
+        form_dest_id: "印尼",
+        form_dest_vn: "越南",
+        form_dest_mm: "缅甸",
+        form_submit: "提交询价",
+        contact_title: "联系我们",
+        contact_subtitle: "多种方式快速获取帮助",
+        contact_wa_title: "WhatsApp",
+        contact_wa_note: "24小时在线，快速响应",
+        contact_wa_btn: "发送消息",
+        contact_email_title: "邮箱",
+        contact_email_note: "2小时内回复",
+        contact_email_btn: "发送邮件",
+        contact_phone_title: "电话",
+        contact_phone_note: "中国客服",
+        contact_phone_btn: "立即拨打",
+        contact_time_title: "工作时间",
+        contact_time_1: "周一至周五：9:00-18:00",
+        contact_time_2: "周六：9:00-13:00",
+        contact_time_note: "周日及节假日：休息",
+        footer_brand: "顺航国际物流货运代理有限公司",
+        footer_tagline: "专业东南亚物流专家",
+        footer_desc: "专注中国到泰国、马来西亚、新加坡、柬埔寨、菲律宾、印尼、越南、缅甸物流—空运、海运、快递、DDP一站式解决方案。",
+        footer_quick: "快速链接",
+        footer_home: "首页",
+        footer_services: "服务项目",
+        footer_routes: "物流线路",
+        footer_quote: "在线询价",
+        footer_service_title: "服务项目",
+        footer_air: "空运",
+        footer_sea: "海运",
+        footer_express: "快递",
+        footer_ddp: "DDP",
+        footer_contact_title: "联系方式",
+        footer_addr: "中国广州市白云区",
+        footer_copyright: "© 2026 顺航国际物流货运代理有限公司 版权所有",
+        footer_privacy: "隐私政策",
+        footer_terms: "服务条款",
+        footer_faq: "常见问题"
+      },
+      en: {
+        brand_name: "Sunhang International Logistics",
+        brand_tagline: "China → Thailand / Malaysia / Singapore / Cambodia / Philippines",
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_routes: "Routes",
+        nav_quote: "Quote",
+        nav_contact: "Contact",
+        wa_btn: "WhatsApp Inquiry",
+        breadcrumb_home: "Home",
+        breadcrumb_brand: "Sunhang Logistics",
+        hero_title: "China → Thailand / Malaysia / Singapore / Cambodia / Philippines Logistics",
+        hero_subtitle: "Air · Sea · Express · DDP · E-commerce — Door-to-door customs clearance",
+        badge_1: "2-Hour Fast Response",
+        badge_2: "Safe & Reliable",
+        badge_3: "Door-to-Door Service",
+        btn_quote: "Get Quote",
+        btn_contact: "Contact Us",
+        services_title: "Our Services",
+        services_subtitle: "Comprehensive International Logistics Solutions",
+        service_air: "Air Freight",
+        service_air_desc: "Fast and secure air transport for urgent shipments",
+        service_sea: "Sea Freight",
+        service_sea_desc: "Cost-effective container shipping, FCL and LCL",
+        service_express: "Express Delivery",
+        service_express_desc: "DHL, FedEx, UPS international express",
+        service_ddp: "DDP Service",
+        service_ddp_desc: "Door-to-door tax-inclusive service",
+        service_ecom: "E-commerce Logistics",
+        service_ecom_desc: "Cross-border warehousing and drop shipping",
+        service_customs: "Customs Clearance",
+        service_customs_desc: "Professional customs declaration services",
+        routes_title: "Routes & Transit Times",
+        routes_subtitle: "Professional China to Southeast Asia Logistics",
+        route_th: "Thailand",
+        route_th_ports: "Main Ports: Laem Chabang, Bangkok",
+        route_th_sea: "Sea: 8-15 days",
+        route_th_air: "Air: 2-4 days",
+        route_th_land: "Land: 5-10 days",
+        route_my: "Malaysia",
+        route_my_ports: "Main Ports: Port Klang, Penang",
+        route_my_sea: "Sea: 7-15 days",
+        route_my_air: "Air: 2-4 days",
+        route_my_ddp: "DDP Available",
+        route_sg: "Singapore",
+        route_sg_ports: "Main Port: Singapore Port",
+        route_sg_sea: "Sea: 10-18 days",
+        route_sg_air: "Air: 1-3 days",
+        route_sg_ftz: "Free Trade Port",
+        route_kh: "Cambodia",
+        route_kh_ports: "Main Transport: Land & Air",
+        route_kh_land: "Land: 3-8 days",
+        route_kh_air: "Air: 1-3 days",
+        route_kh_textile: "Textile Special Line",
+        route_ph: "Philippines",
+        route_ph_ports: "Main Ports: Manila, Cebu",
+        route_ph_sea: "Sea: 10-15 days",
+        route_ph_air: "Air: 1-3 days",
+        route_ph_delivery: "Island Delivery",
+        route_id: "Indonesia",
+        route_id_ports: "Main Ports: Jakarta, Surabaya",
+        route_id_sea: "Sea: 10-18 days",
+        route_id_air: "Air: 2-4 days",
+        route_id_pulau: "Island Delivery",
+        route_vn: "Vietnam",
+        route_vn_ports: "Main Ports: Ho Chi Minh, Haiphong",
+        route_vn_sea: "Sea: 7-14 days",
+        route_vn_air: "Air: 1-3 days",
+        route_vn_textile: "Textile Special Line",
+        route_mm: "Myanmar",
+        route_mm_ports: "Main Transport: Land & Air",
+        route_mm_land: "Land: 4-8 days",
+        route_mm_air: "Air: 1-3 days",
+        route_mm_border: "Border Trade",
+        quote_title: "Get Free Quote",
+        quote_subtitle: "We will reply within 2 hours via WhatsApp or email",
+        form_name: "Name",
+        form_company: "Company",
+        form_email: "Email",
+        form_phone: "WhatsApp / Phone",
+        form_service: "Service Type",
+        form_service_select: "Select service type",
+        form_service_air: "Air Freight",
+        form_service_sea: "Sea Freight",
+        form_service_express: "Express Delivery",
+        form_service_ddp: "DDP Service",
+        form_service_ecom: "E-commerce Logistics",
+        form_destination: "Destination Country",
+        form_dest_select: "Select destination",
+        form_dest_th: "Thailand",
+        form_dest_my: "Malaysia",
+        form_dest_sg: "Singapore",
+        form_dest_kh: "Cambodia",
+        form_dest_ph: "Philippines",
+        form_dest_id: "Indonesia",
+        form_dest_vn: "Vietnam",
+        form_dest_mm: "Myanmar",
+        form_submit: "Submit Quote Request",
+        contact_title: "Contact Us",
+        contact_subtitle: "Multiple ways to get instant help",
+        contact_wa_title: "WhatsApp",
+        contact_wa_note: "24/7 online, fast response",
+        contact_wa_btn: "Send Message",
+        contact_email_title: "Email",
+        contact_email_note: "Reply within 2 hours",
+        contact_email_btn: "Send Email",
+        contact_phone_title: "Phone",
+        contact_phone_note: "China Customer Service",
+        contact_phone_btn: "Call Now",
+        contact_time_title: "Office Hours",
+        contact_time_1: "Mon-Fri: 9:00-18:00",
+        contact_time_2: "Sat: 9:00-13:00",
+        contact_time_note: "Sun & Holidays: Closed",
+        footer_brand: "Sunhang International Logistics",
+        footer_tagline: "Professional SE Asia Logistics Expert",
+        footer_desc: "Specializing in China to Thailand, Malaysia, Singapore, Cambodia, Philippines logistics - air, sea, express, DDP one-stop solutions.",
+        footer_quick: "Quick Links",
+        footer_home: "Home",
+        footer_services: "Services",
+        footer_routes: "Routes",
+        footer_quote: "Quote",
+        footer_service_title: "Services",
+        footer_air: "Air Freight",
+        footer_sea: "Sea Freight",
+        footer_express: "Express",
+        footer_ddp: "DDP",
+        footer_contact_title: "Contact",
+        footer_addr: "Baiyun District, Guangzhou, China",
+        footer_copyright: "© 2026 Sunhang International Logistics Co., Ltd. All rights reserved.",
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Service",
+        footer_faq: "FAQ"
+      }
+    };
+
+    var currentLang = localStorage.getItem('site_lang') || 'en';
+    var phone = "8618928711267";
+
+    function buildWa(text){
+      return "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+    }
+
+    function applyLang(lang){
+      currentLang = lang;
+      document.querySelectorAll('.lang-switch button').forEach(function(btn){
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      document.querySelectorAll('[data-key]').forEach(function(el){
+        var key = el.dataset.key;
+        var text = (i18n[lang] && i18n[lang][key]) ? i18n[lang][key] : '';
+        if(text){
+          el.textContent = text;
+        }
+      });
+
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      
+      if(lang === 'zh'){
+        document.getElementById('floatingWa').href = buildWa("您好，我想咨询从中国到[目的国]的运价，请提供含税DDP报价。货物：____；毛重/体积：____。");
+        document.getElementById('waCard').href = buildWa("您好，我想咨询从中国到[目的国]的运价，请提供含税DDP报价。货物：____；毛重/体积：____。");
+      } else {
+        document.getElementById('floatingWa').href = buildWa("Hello, I'd like a freight quote from China to [destination]. Cargo: ____; Weight/volume: ____.");
+        document.getElementById('waCard').href = buildWa("Hello, I'd like a freight quote from China to [destination]. Cargo: ____; Weight/volume: ____.");
+      }
+
+      localStorage.setItem('site_lang', lang);
+    }
+
+    document.querySelectorAll('.lang-switch button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        applyLang(btn.dataset.lang);
+      });
+    });
+
+    // WhatsApp 点击转化跟踪
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link){
+      link.addEventListener('click', function(){
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18067820696',
+          'event_category': 'Contact',
+          'event_label': 'WhatsApp Click'
+        });
+      });
+    });
+
+    applyLang(currentLang);
+
+    // Scroll Animation Observer
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var delay = entry.target.dataset.delay || 0;
+          setTimeout(function(){
+            entry.target.classList.add('animated');
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+
+    document.querySelectorAll('.service-card, .route-card, .contact-card, .hero-image, .services h2, .routes h2, .quote-section h2, .contact-section h2').forEach(function(el){
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      
+      var name = this.querySelector('input[name="name"]').value;
+      var company = this.querySelector('input[name="company"]').value;
+      var email = this.querySelector('input[name="email"]').value;
+      var phone = this.querySelector('input[name="whatsapp"]').value;
+      var service = this.querySelector('select[name="service"]').value;
+      var destination = this.querySelector('select[name="destination"]').value;
+      
+      var submitBtn = this.querySelector('.submit-btn');
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = currentLang === 'zh' ? '提交中...' : 'Submitting...';
+      submitBtn.disabled = true;
+      
+      fetch('/.netlify/functions/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, company, email, phone, service, destination })
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if (data.success) {
+          // Google Ads 转化跟踪
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18067820696',
+            'event_category': 'Quote Form',
+            'event_label': 'Form Submission'
+          });
+          var msg = currentLang === 'zh' 
+            ? '询价已提交！我们将尽快联系您！' 
+            : 'Quote submitted! We will contact you soon!';
+          alert(msg);
+        } else {
+          var msg = currentLang === 'zh' 
+            ? '提交失败，请直接联系 WhatsApp！' 
+            : 'Submit failed, please contact us via WhatsApp!';
+          alert(msg);
+        }
+      })
+      .catch(function(err){
+        console.error(err);
+        var msg = currentLang === 'zh' 
+          ? '提交失败，请直接联系 WhatsApp！' 
+          : 'Submit failed, please contact us via WhatsApp!';
+        alert(msg);
+      })
+      .finally(function(){
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        this.reset();
+      }.bind(this));
+    });
+  </script>
+</body>
+</html>
